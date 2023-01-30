@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.yms.ymsdemo.DemoController">
+
+    <Label alignment="CENTER" layoutX="119.0" layoutY="17.0" text="Шлагбаум" AnchorPane.topAnchor="17.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <Label fx:id="infoVehicle" alignment="CENTER" layoutX="7.0" layoutY="37.0" prefHeight="48.0" prefWidth="289.0" textFill="#0f53da" wrapText="true" AnchorPane.topAnchor="37.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <TextField fx:id="textFieldRegNumberIN" alignment="CENTER" layoutX="56.0" layoutY="80.0" prefHeight="25.0" prefWidth="80.0" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="80.0" />
+    <Button layoutX="62.0" layoutY="110.0" onAction="#onVehicleINButtonClick" text="Приехать" AnchorPane.topAnchor="110.0" />
+    <TextField fx:id="textFieldRegNumberOUT" alignment="CENTER" layoutX="167.0" layoutY="80.0" prefHeight="25.0" prefWidth="80.0" AnchorPane.leftAnchor="167.0" AnchorPane.topAnchor="80.0" />
+    <Button layoutX="181.0" layoutY="110.0" onAction="#onVehicleOUTButtonClick" text="Уехать" AnchorPane.topAnchor="110.0" />
+
+    <ListView fx:id="listViewRegNumbers" focusTraversable="false" layoutX="51.0" layoutY="170.0" prefHeight="143.0" prefWidth="200.0" AnchorPane.rightAnchor="349.0">
+<!--        <items>-->
+<!--            <FXCollections fx:factory="observableArrayList">-->
+<!--                <String fx:value="Item 1" />-->
+<!--                <String fx:value="Item 2" />-->
+<!--                <String fx:value="Item 3" />-->
+<!--                <String fx:value="Item 4" />-->
+<!--                <String fx:value="Item 5" />-->
+<!--                <String fx:value="Item 6" />-->
+<!--                <String fx:value="Item 7" />-->
+<!--                <String fx:value="Item 8" />-->
+<!--                <String fx:value="Item 9" />-->
+<!--            </FXCollections>-->
+<!--        </items>-->
+    </ListView>
+
+    <!--    <TableView fx:id="tableView" focusTraversable="false" layoutX="10.0" layoutY="92.0" prefHeight="208.0" prefWidth="201.0" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="10.0" />-->
+
+    <!--    ======================================================================================================-->
+
+    <Label alignment="CENTER" layoutX="390.0" layoutY="17.0" text="Блокировка доков" AnchorPane.topAnchor="17.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <Label alignment="CENTER" layoutX="418.0" layoutY="51.0" text="С" AnchorPane.topAnchor="51.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <Label alignment="CENTER" layoutX="528.0" layoutY="51.0" text="ПО" AnchorPane.topAnchor="51.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <TextField fx:id="textFieldDockNum" alignment="CENTER" layoutX="306.0" layoutY="76.0" prefHeight="25.0" prefWidth="35.0" AnchorPane.leftAnchor="306.0" AnchorPane.topAnchor="76.0" />
+
+    <DatePicker fx:id="datePickerFrom" layoutX="363.0" layoutY="76.0" prefHeight="25.0" prefWidth="110.0" />
+
+    <DatePicker fx:id="datePickerTo" layoutX="484.0" layoutY="77.0" prefHeight="25.0" prefWidth="110.0" />
+
+    <TextField fx:id="textFieldTimeFrom" alignment="CENTER" layoutX="363.0" layoutY="107.0" prefHeight="25.0" prefWidth="110.0" AnchorPane.leftAnchor="363.0" AnchorPane.topAnchor="107.0" />
+
+    <TextField fx:id="textFieldTimeTo" alignment="CENTER" layoutX="484.0" layoutY="107.0" prefHeight="25.0" prefWidth="110.0" AnchorPane.leftAnchor="484.0" AnchorPane.topAnchor="107.0" />
+
+   <Label alignment="CENTER" layoutX="268.0" layoutY="51.0" prefHeight="20.0" prefWidth="111.0" text="№">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+
+    <Button layoutX="368.0" layoutY="152.0" onAction="#onDockLockButtonClick" text="Заблокировать" AnchorPane.topAnchor="152.0" />
+
+    <Button layoutX="487.0" layoutY="152.0" onAction="#onDockUnlockButtonClick" text="Разблокировать" AnchorPane.topAnchor="152.0" />
+
+    <Label fx:id="infoDock" alignment="CENTER" layoutX="319.0" layoutY="183.0" prefHeight="130.0" prefWidth="262.0" textFill="#0f53da" wrapText="true" AnchorPane.topAnchor="183.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+<!--    ======================================================================================================-->
+
+    <Label alignment="CENTER" layoutX="251.0" layoutY="341.0" text="Вызов ТС в док" AnchorPane.topAnchor="341.0">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+    <Label alignment="CENTER" layoutX="25.0" layoutY="351.0" prefHeight="20.0" prefWidth="210.0" text="Номера доков через запятую">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <TextField fx:id="textFieldDocksCall" alignment="CENTER" layoutX="25.0" layoutY="371.0" prefHeight="25.0" prefWidth="210.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="371.0" />
+
+    <Button layoutX="252.0" layoutY="371.0" onAction="#onDocksCallButtonClick" text="Вызвать" AnchorPane.topAnchor="371.0" />
+
+    <ListView fx:id="listViewDocksEmpty" focusTraversable="false" layoutX="473.0" layoutY="361.0" prefHeight="223.0" prefWidth="111.0" AnchorPane.rightAnchor="16.0">
+<!--        <items>-->
+<!--            <FXCollections fx:factory="observableArrayList">-->
+<!--                <String fx:value="Item 1" />-->
+<!--                <String fx:value="Item 2" />-->
+<!--                <String fx:value="Item 3" />-->
+<!--                <String fx:value="Item 4" />-->
+<!--                <String fx:value="Item 5" />-->
+<!--                <String fx:value="Item 6" />-->
+<!--                <String fx:value="Item 7" />-->
+<!--                <String fx:value="Item 8" />-->
+<!--                <String fx:value="Item 9" />-->
+<!--            </FXCollections>-->
+<!--        </items>-->
+    </ListView>
+
+    <Separator layoutX="278.0" layoutY="26.0" orientation="VERTICAL" prefHeight="288.0" prefWidth="45.0" AnchorPane.topAnchor="20.0" />
+    <Separator layoutX="22.0" layoutY="321.0" prefHeight="3.0" prefWidth="262.0" AnchorPane.leftAnchor="20.0" />
+    <Separator layoutX="315.0" layoutY="323.0" prefHeight="3.0" prefWidth="262.0" AnchorPane.rightAnchor="20.0" />
+   <Label alignment="CENTER" layoutX="7.0" layoutY="142.0" prefHeight="20.0" prefWidth="289.0" text="На территории (не зарегистрированы):">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="infoWMS" alignment="CENTER" layoutX="2.0" layoutY="397.0" prefHeight="202.0" prefWidth="447.0" textFill="#0f53da" wrapText="true">
+      <font>
+         <Font size="10.0" />
+      </font>
+   </Label>
+
+</AnchorPane>
